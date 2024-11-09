@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LeaderBoard from './components/LeaderBoard';
+import LeaderBoard2 from './components/LeaderBoard2';
 import './App.css';
 
 interface Props {}
@@ -41,7 +42,8 @@ const App = ({  }: Props) => {
 
   return (
     <div className="container">
-      <LeaderBoard data={data} />
+      {/* <LeaderBoard data={data} /> */}
+      <LeaderBoard2 data={data} />
     </div>
   );
 };

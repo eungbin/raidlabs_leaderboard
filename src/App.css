@@ -3,3 +3,7 @@
   margin: 0 auto;
   background-size: cover;
 }
+
+* {
+  box-sizing: border-box;
+}
