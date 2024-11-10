@@ -6,7 +6,11 @@ div.container-leaderboard {
   border-radius: 40px;
   height: 654px;
   overflow: auto;
-  min-width: 600px;
+  -ms-overflow-style: none;
+  /* min-width: 600px; */
+}
+div.container-leaderboard::-webkit-scrollbar {
+  display: none;
 }
 
 table.leaderboard-table {
@@ -27,6 +31,12 @@ table.leaderboard-table > thead > tr > th {
   padding-top: 40px;
   padding-bottom: 10px;
 }
+
+/* table.leaderboard-table > tbody {
+  min-width: 600px;
+  overflow-x: scroll;
+} */
+
 table.leaderboard-table > tfoot {
   position: sticky;
   bottom: 0;
@@ -73,6 +83,9 @@ div.table-footer-right-container {
   font-size: 1.2rem;
 }
 
-#sorted {
-  color: #F2DC6D;
+#rank {
+  width: 100px;
+}
+#winRate {
+  width: 80px;
 }

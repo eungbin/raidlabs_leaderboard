@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LeaderBoard2 from './components/LeaderBoard2';
+import LeaderBoard2 from './components/LeaderBoard';
 import './App.css';
 
 interface Props {}
