@@ -1,9 +1,11 @@
 div.container-leaderboard {
   background-color: #373853;
-  padding: 40px;
+  padding: 0px 40px 0px 40px;
   border: 5px double #F2DC6D;
   color: white;
   border-radius: 40px;
+  height: 654px;
+  overflow: auto;
 }
 
 table.leaderboard-table {
@@ -13,6 +15,23 @@ table.leaderboard-table {
   font-weight: bold;
   font-size: 0.9rem;
   overflow-y: scroll;
+}
+
+table.leaderboard-table > thead {
+  position: sticky;
+  top: 0;
+  background-color: #373853;
+}
+table.leaderboard-table > thead > tr > th {
+  padding-top: 40px;
+}
+table.leaderboard-table > tfoot {
+  position: sticky;
+  bottom: 0;
+  background-color: #373853;
+}
+table.leaderboard-table > tfoot > tr > td {
+  padding-bottom: 40px;
 }
 
 tr.leaderboard-content-row {
