@@ -6,6 +6,7 @@ div.container-leaderboard {
   border-radius: 40px;
   height: 654px;
   overflow: auto;
+  min-width: 600px;
 }
 
 table.leaderboard-table {
@@ -24,6 +25,7 @@ table.leaderboard-table > thead {
 }
 table.leaderboard-table > thead > tr > th {
   padding-top: 40px;
+  padding-bottom: 10px;
 }
 table.leaderboard-table > tfoot {
   position: sticky;
@@ -69,4 +71,8 @@ div.table-footer-right-container {
 
 .arrow-size {
   font-size: 1.2rem;
+}
+
+#sorted {
+  color: #F2DC6D;
 }

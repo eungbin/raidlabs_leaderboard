@@ -50,15 +50,23 @@ export default function LeaderBoard2(props: IProps) {
   const _goPrevPage = () => { if(page === 1) return; setPage(page-1); }
   const _goNextPage = () => { if(page === lastPage.current) return; setPage(page+1); }
 
-  const _sortTable = (category: string) => {
+  const _sortTable = (e: any, category: string) => {
+    const headerElems = e.target.parentElement.children;
+
+    for(let i=3; i<headerElems.length; i++) {
+      headerElems[i].removeAttribute('id');
+    }
+
     if(!sorted.sorted) {
       setSorted({ sorted: true, desc: 'desc', category: category });                                    // 해당 카테고리 내림차순 정렬
+      e.target.id = 'sorted';
     } else {
       if(sorted.category === category) {
-        if(sorted.desc === 'desc') { setSorted({ sorted: true, desc: 'asc', category: category }); }    // 해당 카테고리 오름차순 정렬
+        if(sorted.desc === 'desc') { setSorted({ sorted: true, desc: 'asc', category: category }); e.target.id = 'sorted'; }    // 해당 카테고리 오름차순 정렬
         else if(sorted.desc === 'asc') { setSorted({ sorted: false, desc: 'none', category: 'none'}); } // sort 초기화
       } else {
         setSorted({ sorted: true, desc: 'desc', category: category });                                  // 해당 카테고리 내림차순 정렬
+        e.target.id = 'sorted';
       }
     }
   }
@@ -97,9 +105,10 @@ export default function LeaderBoard2(props: IProps) {
         <thead>
           <tr className='leaderboard-header-row'>
             <th className='table-inner-padding'>Rank</th><th>Player Name</th>
-            <th>Guild Name</th><th className='clickable none-drag' onClick={() => _sortTable('score')}>Score</th>
-            <th className='clickable none-drag' onClick={() => _sortTable('wins')}>Wins</th><th className='clickable none-drag' onClick={() => _sortTable('losses')}>Losses</th>
-            <th className='clickable none-drag' onClick={() => _sortTable('winRate')}>Win Rate</th>
+            <th>Guild Name</th><th className='clickable none-drag' onClick={(e) => _sortTable(e, 'score')} id='test'>Score</th>
+            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'wins')}>Wins</th>
+            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'losses')}>Losses</th>
+            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'winRate')}>Win Rate</th>
           </tr>
         </thead>
         <tbody>
