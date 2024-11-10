@@ -19,3 +19,8 @@ npm i
 ``` bash
 npm run dev
 ```
+
+### port
+``` bash
+http://localhost:5500
+```
