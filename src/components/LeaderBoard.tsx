@@ -101,48 +101,44 @@ export default function LeaderBoard2(props: IProps) {
 
   return (
     <div className='container-leaderboard'>
-      <table className='leaderboard-table'>
-        <thead>
-          <tr className='leaderboard-header-row'>
-            <th className='table-inner-padding' id='rank'>Rank</th><th>Player Name</th>
-            <th>Guild Name</th><th className='clickable none-drag' onClick={(e) => _sortTable(e, 'score')}>Score</th>
-            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'wins')}>Wins</th>
-            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'losses')}>Losses</th>
-            <th className='clickable none-drag' onClick={(e) => _sortTable(e, 'winRate')} id='winRate'>Win Rate</th>
-          </tr>
-        </thead>
-        <tbody>
-          {renderData?.map((v: IBoard, idx: number) => (
-            <tr className='leaderboard-content-row' key={idx}>
-              <td className='table-inner-padding row-border-radius-left'>{v.rank}</td>
-              <td>{v.playerName}</td>
-              <td>{v.guildName}</td>
-              <td>{v.score}</td>
-              <td>{v.wins}</td>
-              <td>{v.losses}</td>
-              <td className='row-border-radius-right'>{v.winRate}</td>
+      <div className='container-leaderboard-scroll-x'>
+        <table className='leaderboard-table'>
+          <thead>
+            <tr className='leaderboard-header-row'>
+              <th className='table-inner-padding' id='rank'>Rank</th><th className='td-min-width-100'>Player Name</th>
+              <th className='td-min-width-100'>Guild Name</th><th className='clickable none-drag td-min-width-80' onClick={(e) => _sortTable(e, 'score')}>Score</th>
+              <th className='clickable none-drag td-min-width-80' onClick={(e) => _sortTable(e, 'wins')}>Wins</th>
+              <th className='clickable none-drag td-min-width-80' onClick={(e) => _sortTable(e, 'losses')}>Losses</th>
+              <th className='clickable none-drag td-min-width-80' onClick={(e) => _sortTable(e, 'winRate')}>Win Rate</th>
             </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td className='table-footer table-footer-padding' colSpan={7}>
-              <div className='table-footer-container'>
-                <div className='table-footer-left-container'>
-                  <SelectBox onChangeFunc={_handleItemPerPage} itemPerPage={itemPerPage} />
-                </div>
-                <div className='table-footer-right-container'>
-                  <span className='arrow-size clickable none-drag' onClick={_goFirstPage}>{'<<'}</span>
-                  <span className='arrow-size clickable none-drag' onClick={_goPrevPage}>{'<'}</span>
-                  <span className='arrow-size'>{page}</span>
-                  <span className='arrow-size clickable none-drag' onClick={_goNextPage}>{'>'}</span>
-                  <span className='arrow-size clickable none-drag' onClick={_goLastPage}>{'>>'}</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+          </thead>
+          <tbody>
+            {renderData?.map((v: IBoard, idx: number) => (
+              <tr className='leaderboard-content-row' key={idx}>
+                <td className='table-inner-padding row-border-radius-left'>{v.rank}</td>
+                <td>{v.playerName}</td>
+                <td>{v.guildName}</td>
+                <td>{v.score}</td>
+                <td>{v.wins}</td>
+                <td>{v.losses}</td>
+                <td className='row-border-radius-right'>{v.winRate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className='table-footer-container'>
+        <div className='table-footer-left-container'>
+          <SelectBox onChangeFunc={_handleItemPerPage} itemPerPage={itemPerPage} />
+        </div>
+        <div className='table-footer-right-container'>
+          <span className='arrow-size clickable none-drag' onClick={_goFirstPage}>{'<<'}</span>
+          <span className='arrow-size clickable none-drag' onClick={_goPrevPage}>{'<'}</span>
+          <span className='arrow-size'>{page}</span>
+          <span className='arrow-size clickable none-drag' onClick={_goNextPage}>{'>'}</span>
+          <span className='arrow-size clickable none-drag' onClick={_goLastPage}>{'>>'}</span>
+        </div>
+      </div>
     </div>
   );
 }

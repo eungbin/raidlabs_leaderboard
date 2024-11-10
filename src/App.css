@@ -4,6 +4,12 @@
   background-size: cover;
 }
 
+@media only screen and (max-width:1200px) {
+  .container {
+    padding: 100px 20px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
