@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/SelectBox.css';
 
 interface IProps {
   onChangeFunc: any;
@@ -9,7 +10,6 @@ export default function SelectBox(props: IProps) {
   const [state, setState] = useState<number>(props.itemPerPage);
 
   const _changeItemPerPage = (e: any) => {
-    console.log(parseInt(e.target.value));
     setState(parseInt(e.target.value));
   }
 

@@ -1,0 +1,8 @@
+select {
+  border: 1px solid white;
+  background-color: #434459;
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}

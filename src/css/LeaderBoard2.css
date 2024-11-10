@@ -12,6 +12,7 @@ table.leaderboard-table {
   text-align: left;
   font-weight: bold;
   font-size: 0.9rem;
+  overflow-y: scroll;
 }
 
 tr.leaderboard-content-row {
@@ -29,6 +30,24 @@ td.row-border-radius-right {
   border-radius: 0% 20px 20px 0%;
 }
 
+td.table-footer {
+
+}
 td.table-footer-padding {
   padding-top: 30px;
+}
+div.table-footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+div.table-footer-left-container {
+  
+}
+div.table-footer-right-container {
+  display: flex;
+  gap: 50px;
+}
+
+.arrow-size {
+  font-size: 1.2rem;
 }
